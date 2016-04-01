@@ -16,7 +16,27 @@
 
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$('.fancybox').fancybox();
+			$('.fancybox').fancybox({
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
 		});
 	</script>
 	<style type="text/css">
